@@ -1,0 +1,32 @@
+﻿@model InjectionDemo.Models.UserAuthenticationRequest
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="container">
+
+    @using (Html.BeginForm())
+    {
+        if (Model != null && Model.IsAuthenticated)
+        {
+            <div class="alert-success">Login successful...</div>
+        }
+        else
+        {
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input class="form-control" type="text" name="username" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input class="form-control" type="text" name="password" />
+            </div>
+            <div class="row">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        }
+    }
+</div>
+
